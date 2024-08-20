@@ -33,6 +33,8 @@
     "jsonwebtoken": "^9.0.2",
     "middleware": "^1.0.0",
     "moment": "^2.30.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.0",
     "owasp-password-strength-test": "^1.3.0",
     "pg": "^8.12.0",
     "reflect-metadata": "^0.2.2",
