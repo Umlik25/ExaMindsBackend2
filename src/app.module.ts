@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { HealthModule } from './healthcheck/health.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { UsersModule } from './users';
@@ -23,12 +24,13 @@ import { LoginRecord } from './auth/entities';
         password: configService.get<string>('DATABASE_PASSWORD'),
         database: configService.get<string>('DATABASE_NAME'),
         entities: [User, LoginRecord], // Add all your entities here
-        synchronize: true,
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),
     UsersModule,
     AuthModule,
+    HealthModule
   ],
 })
 export class AppModule {}
